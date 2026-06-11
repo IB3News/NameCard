@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蔣友中 · IB³ News</title>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 390px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    }
+
+    .header {
+      background: #1a1a2e;
+      padding: 28px 24px 20px;
+    }
+
+    .avatar-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #fff;
+      margin-bottom: 14px;
+      background: #ccc;
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .role-tag {
+      font-size: 11px;
+      color: #a0a8c0;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .name-zh {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .name-en {
+      font-size: 13px;
+      color: #8890a8;
+    }
+
+    .tagline {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #c0c8e0;
+    }
+
+    .photo-block {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #e0e0e0;
+    }
+
+    .photo-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    .info-block {
+      margin: 16px;
+      background: #f7f8fc;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8eaf0;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .info-item:last-child { margin-bottom: 0; }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1a1a2e;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 0 16px 16px;
+    }
+
+    .cta-btn {
+      display: block;
+      text-align: center;
+      padding: 12px 8px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .cta-btn:active { opacity: 0.75; }
+
+    .btn-line { background: #06C755; color: #fff; }
+    .btn-website { background: #1a1a2e; color: #fff; }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px 16px;
+    }
+
+    .share-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .share-icon { font-size: 18px; }
+    .powered { font-size: 11px; color: #bbb; }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="header">
+      <div class="avatar-wrap">
+        <img src="https://via.placeholder.com/72" alt="avatar">
+      </div>
+      <div class="role-tag">創辦人 · Editor-in-Chief</div>
+      <div class="name-row">
+        <span class="name-zh">蔣友中</span>
+        <span class="name-en">PJ Chiang</span>
+      </div>
+      <div class="tagline">媒體即資產，曝光會消失，資產會留下</div>
+    </div>
+
+    <div class="photo-block">
+      <div class="photo-placeholder">[ 個人照 / 品牌圖 ]</div>
+    </div>
+
+    <div class="info-block">
+      <div class="brand-row">
+        <div class="brand-logo">IB³</div>
+        <div class="brand-name">IB³ News · 心視界</div>
+      </div>
+      <div class="info-item">
+        <div class="dot"></div>
+        <span>身心靈產業專業新聞媒體</span>
+      </div>
+      <div class="info-item">
+        <div class="dot"></div>
+        <span>整合行銷 8+ 年｜身心靈產業 6+ 年</span>
+      </div>
+      <div class="info-item">
+        <div class="dot"></div>
+        <span>pj@iceberg3.tw</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://line.me/ti/p/你的LINE_ID" class="cta-btn btn-line">LINE 聯繫</a>
+      <a href="https://iceberg3.tw" class="cta-btn btn-website">官網</a>
+    </div>
+
+    <div class="footer">
+      <button class="share-btn" onclick="shareCard()">
+        <span class="share-icon">⤴</span>
+        <span>分享名片</span>
+      </button>
+      <span class="powered">iceberg3.tw</span>
+    </div>
+
+  </div>
+
+  <script>
+    const LIFF_ID = '1657781155-ENHC8M61';
+    const CARD_URL = 'https://IB3News.github.io/NameCard/IB3Lcard.html';
+
+    // Flex Message 名片內容
+    const flexCard = {
+      type: 'bubble',
+      body: {
+        type: 'box',
+        layout: 'vertical',
+        paddingAll: '0px',
+        contents: [
+          {
+            type: 'box',
+            layout: 'vertical',
+            backgroundColor: '#1a1a2e',
+            paddingAll: '20px',
+            contents: [
+              {
+                type: 'text',
+                text: '創辦人 · Editor-in-Chief',
+                size: 'xs',
+                color: '#a0a8c0',
+                margin: 'none'
+              },
+              {
+                type: 'box',
+                layout: 'horizontal',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '蔣友中',
+                    size: 'xl',
+                    weight: 'bold',
+                    color: '#ffffff'
+                  },
+                  {
+                    type: 'text',
+                    text: 'PJ Chiang',
+                    size: 'xs',
+                    color: '#8890a8',
+                    align: 'end',
+                    gravity: 'bottom'
+                  }
+                ]
+              },
+              {
+                type: 'text',
+                text: '媒體即資產，曝光會消失，資產會留下',
+                size: 'xs',
+                color: '#c0c8e0',
+                margin: 'sm',
+                wrap: true
+              }
+            ]
+          },
+          {
+            type: 'box',
+            layout: 'vertical',
+            margin: 'md',
+            paddingAll: '16px',
+            contents: [
+              {
+                type: 'box',
+                layout: 'horizontal',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    width: '36px',
+                    height: '36px',
+                    backgroundColor: '#1a1a2e',
+                    cornerRadius: '8px',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: 'IB³',
+                        size: 'xxs',
+                        weight: 'bold',
+                        color: '#ffffff',
+                        align: 'center'
+                      }
+                    ]
+                  },
+                  {
+                    type: 'text',
+                    text: 'IB³ News · 心視界',
+                    weight: 'bold',
+                    size: 'sm',
+                    color: '#1a1a2e',
+                    margin: 'md',
+                    gravity: 'center'
+                  }
+                ]
+              },
+              { type: 'separator', margin: 'md' },
+              {
+                type: 'text',
+                text: '• 身心靈產業專業新聞媒體',
+                size: 'sm',
+                color: '#444444',
+                margin: 'md'
+              },
+              {
+                type: 'text',
+                text: '• 整合行銷 8+ 年｜身心靈產業 6+ 年',
+                size: 'sm',
+                color: '#444444',
+                margin: 'sm',
+                wrap: true
+              },
+              {
+                type: 'text',
+                text: '• pj@iceberg3.tw',
+                size: 'sm',
+                color: '#444444',
+                margin: 'sm'
+              }
+            ]
+          }
+        ]
+      },
+      footer: {
+        type: 'box',
+        layout: 'horizontal',
+        spacing: 'sm',
+        paddingAll: '16px',
+        contents: [
+          {
+            type: 'button',
+            action: {
+              type: 'uri',
+              label: 'LINE 聯繫',
+              uri: 'https://line.me/ti/p/你的LINE_ID'
+            },
+            style: 'primary',
+            color: '#06C755',
+            height: 'sm'
+          },
+          {
+            type: 'button',
+            action: {
+              type: 'uri',
+              label: '官網',
+              uri: 'https://iceberg3.tw'
+            },
+            style: 'primary',
+            color: '#1a1a2e',
+            height: 'sm'
+          }
+        ]
+      }
+    };
+
+    async function shareCard() {
+      try {
+        await liff.init({ liffId: LIFF_ID });
+
+        if (!liff.isInClient()) {
+          // 不在 LINE 內開啟，fallback 複製連結
+          await navigator.clipboard.writeText(CARD_URL);
+          alert('連結已複製，請貼到 LINE 分享');
+          return;
+        }
+
+        if (!liff.isApiAvailable('shareTargetPicker')) {
+          alert('此裝置不支援分享功能');
+          return;
+        }
+
+        await liff.shareTargetPicker([
+          {
+            type: 'flex',
+            altText: '蔣友中 · IB³ News 名片',
+            contents: flexCard
+          }
+        ]);
+      } catch (err) {
+        console.error(err);
+        alert('分享失敗：' + err.message);
+      }
+    }
+  </script>
+</body>
+</html>
