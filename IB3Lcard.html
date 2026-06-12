@@ -446,7 +446,7 @@ const flexCard = {
         action: {
           type: 'uri',
           label: '轉傳分享名片',
-          uri: 'https://line.me'   // 🌟 關鍵：任何人點了這張圖，都會帶著 auto=1 參數開啟你的名片
+          uri: 'https://line.me/R/app/1657781155-ENHC8M61?auto=1'   // 🌟 關鍵：任何人點了這張圖(帶有LIFF ID的網址，加上語法)，都會帶著 auto=1 參數開啟你的名片
         }
       },
       {
@@ -491,6 +491,22 @@ const flexCard = {
         alert('分享失敗：' + err.message);
       }
     }
+  
+  window.onload = async function() {
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('auto') === '1') {
+      
+      // 1. 自動彈出好友名單，等待用戶選完並發送
+      await shareCard();
+      
+      // 2. 🌟 🔥 只要在這邊加上這行，用戶點發送後，整個網頁就會自動秒關閉！ 🔥 🌟
+      liff.closeWindow(); 
+    }
+  } catch (err) {
+    console.error("自動分享檢查失敗:", err);
+  }
+};
 </script>
 </body>
 </html>
