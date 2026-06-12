@@ -436,6 +436,20 @@ const flexCard = {
         offsetBottom: '16px'
       },
       {
+        type: 'image',
+        url: 'https://raw.githubusercontent.com/IB3News/NameCard/refs/heads/main/LineCardShare.png',
+        size: '15px',
+        aspectRatio: '1:1',
+        position: 'absolute',  // 🌟 關鍵：切換為絕對定位
+        offsetBottom: '8px',   // 🌟 距離底部的距離（可依據畫面微調 1px ~ 4px）
+        offsetStart: '20px',
+        action: {
+          type: 'uri',
+          label: '轉傳分享名片',
+          uri: 'https://line.me'   // 🌟 關鍵：任何人點了這張圖，都會帶著 auto=1 參數開啟你的名片
+        }
+      },
+      {
         type: 'text',
         text: 'Powered by IB³ News',
         size: 'xxs',
