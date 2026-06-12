@@ -286,7 +286,8 @@ const flexCard = {
             aspectRatio: '1:1',
             aspectMode: 'cover',
             margin: 'none',
-            align: 'start' //靠左
+            align: 'start', //靠左
+            offsetBottom: '8px' 
           },
           // 職稱
           {
@@ -308,7 +309,7 @@ const flexCard = {
                 color: '#ffffff'
               },
               {
-                type: 'text',
+                type: 'span',
                 text: 'Pierce',
                 size: 'xs',
                 color: '#8890a8'
@@ -419,7 +420,8 @@ const flexCard = {
         },
         style: 'primary',
         color: '#06C755',
-        height: 'sm'
+        height: 'sm',
+        offsetBottom: '16px'
       },
       {
         type: 'button',
@@ -430,7 +432,18 @@ const flexCard = {
         },
         style: 'primary',
         color: '#1a1a2e',
-        height: 'sm'
+        height: 'sm',
+        offsetBottom: '16px'
+      },
+      {
+        type: 'text',
+        text: 'Powered by IB³ News',
+        size: 'xxs',
+        margin: 'xs',
+        position: 'absolute',
+        offsetBottom: '8px',
+        color: '#888888',
+        offsetEnd: '20px'
       }
     ]
   }
