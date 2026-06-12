@@ -260,162 +260,183 @@
 
   </div>
 
-  <script>
-    const LIFF_ID = '1657781155-ENHC8M61';
-    const CARD_URL = 'https://IB3News.github.io/NameCard/IB3Lcard.html';
+const LIFF_ID = '1657781155-ENHC8M61';
+const CARD_URL = 'https://IB3News.github.io/NameCard/IB3Lcard.html';
 
-    // Flex Message 名片內容
-    const flexCard = {
-      type: 'bubble',
-      body: {
+const flexCard = {
+  type: 'bubble',
+  body: {
+    type: 'box',
+    layout: 'vertical',
+    paddingAll: '0px',
+    contents: [
+      // ── 深色 Header 區塊（含頭像）──
+      {
         type: 'box',
         layout: 'vertical',
-        paddingAll: '0px',
+        backgroundColor: '#1a1a2e',
+        paddingAll: '20px',
         contents: [
+          // 頭像
+          {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/IB3News/NameCard/refs/heads/main/for_LINE Card v2.png',
+            size: '60px',
+            aspectRatio: '1:1',
+            aspectMode: 'cover',
+            margin: 'none'
+          },
+          // 職稱
+          {
+            type: 'text',
+            text: '總編輯 · Editor-in-Chief',
+            size: 'xs',
+            color: '#a0a8c0',
+            margin: 'sm'
+          },
+          // 姓名行
           {
             type: 'box',
-            layout: 'vertical',
-            backgroundColor: '#1a1a2e',
-            paddingAll: '20px',
+            layout: 'horizontal',
             contents: [
               {
                 type: 'text',
-                text: '總編輯 · Editor-in-Chief',
-                size: 'xs',
-                color: '#a0a8c0',
-                margin: 'none'
-              },
-              {
-                type: 'box',
-                layout: 'horizontal',
-                contents: [
-                  {
-                    type: 'text',
-                    text: '蔣友中',
-                    size: 'xl',
-                    weight: 'bold',
-                    color: '#ffffff'
-                  },
-                  {
-                    type: 'text',
-                    text: 'Pierce',
-                    size: 'xs',
-                    color: '#8890a8',
-                    align: 'end',
-                    gravity: 'bottom'
-                  }
-                ]
+                text: '蔣友中',
+                size: 'xl',
+                weight: 'bold',
+                color: '#ffffff'
               },
               {
                 type: 'text',
-                text: '讓數媒資產，提升客戶對你的信任',
+                text: 'Pierce',
                 size: 'xs',
-                color: '#c0c8e0',
-                margin: 'sm',
-                wrap: true
+                color: '#8890a8',
+                align: 'end',
+                gravity: 'bottom'
               }
             ]
           },
+          // Tagline
           {
-            type: 'box',
-            layout: 'vertical',
-            margin: 'md',
-            paddingAll: '16px',
-            contents: [
-              {
-                type: 'box',
-                layout: 'horizontal',
-                contents: [
-                  {
-                    type: 'box',
-                    layout: 'vertical',
-                    width: '36px',
-                    height: '36px',
-                    backgroundColor: '#1a1a2e',
-                    cornerRadius: '8px',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    contents: [
-                      {
-                        type: 'text',
-                        text: 'IB³',
-                        size: 'xxs',
-                        weight: 'bold',
-                        color: '#ffffff',
-                        align: 'center'
-                      }
-                    ]
-                  },
-                  {
-                    type: 'text',
-                    text: 'Powered by IB³ News',
-                    weight: 'bold',
-                    size: 'sm',
-                    color: '#1a1a2e',
-                    margin: 'md',
-                    gravity: 'center'
-                  }
-                ]
-              },
-              { type: 'separator', margin: 'md' },
-              {
-                type: 'text',
-                text: '• 懂「身心靈語言」的媒體操盤手',
-                size: 'sm',
-                color: '#444444',
-                margin: 'md'
-              },
-              {
-                type: 'text',
-                text: '• 整合行銷 8+ 年｜身心靈產業 6+ 年',
-                size: 'sm',
-                color: '#444444',
-                margin: 'sm',
-                wrap: true
-              },
-              {
-                type: 'text',
-                text: '• iceberg3.info@gmail.com',
-                size: 'sm',
-                color: '#444444',
-                margin: 'sm'
-              }
-            ]
+            type: 'text',
+            text: '讓數媒資產，提升客戶對你的信任',
+            size: 'xs',
+            color: '#c0c8e0',
+            margin: 'sm',
+            wrap: true
           }
         ]
       },
-      footer: {
+      // ── 形象照（深色與白色區塊之間）──
+      {
+        type: 'image',
+        url: 'https://raw.githubusercontent.com/IB3News/NameCard/refs/heads/main/profile_v1.png',
+        size: 'full',
+        aspectRatio: '20:13',
+        aspectMode: 'cover',
+        margin: 'none'
+      },
+      // ── 白色資訊區塊 ──
+      {
         type: 'box',
-        layout: 'horizontal',
-        spacing: 'sm',
+        layout: 'vertical',
+        margin: 'md',
         paddingAll: '16px',
         contents: [
           {
-            type: 'button',
-            action: {
-              type: 'uri',
-              label: 'LINE 聯繫',
-              uri: 'https://line.me/ti/p/@801qstqw'
-            },
-            style: 'primary',
-            color: '#06C755',
-            height: 'sm'
+            type: 'box',
+            layout: 'horizontal',
+            contents: [
+              {
+                type: 'box',
+                layout: 'vertical',
+                width: '36px',
+                height: '36px',
+                backgroundColor: '#1a1a2e',
+                cornerRadius: '8px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                contents: [
+                  {
+                    type: 'text',
+                    text: 'IB³',
+                    size: 'xxs',
+                    weight: 'bold',
+                    color: '#ffffff',
+                    align: 'center'
+                  }
+                ]
+              },
+              {
+                type: 'text',
+                text: 'Powered by IB³ News',
+                weight: 'bold',
+                size: 'sm',
+                color: '#1a1a2e',
+                margin: 'md',
+                gravity: 'center'
+              }
+            ]
+          },
+          { type: 'separator', margin: 'md' },
+          {
+            type: 'text',
+            text: '• 懂「身心靈語言」的媒體操盤手',
+            size: 'sm',
+            color: '#444444',
+            margin: 'md'
           },
           {
-            type: 'button',
-            action: {
-              type: 'uri',
-              label: '官網',
-              uri: 'https://iceberg3.tw'
-            },
-            style: 'primary',
-            color: '#1a1a2e',
-            height: 'sm'
+            type: 'text',
+            text: '• 整合行銷 8+ 年｜身心靈產業 6+ 年',
+            size: 'sm',
+            color: '#444444',
+            margin: 'sm',
+            wrap: true
+          },
+          {
+            type: 'text',
+            text: '• iceberg3.info@gmail.com',
+            size: 'sm',
+            color: '#444444',
+            margin: 'sm'
           }
         ]
       }
-    };
-
+    ]
+  },
+  footer: {
+    type: 'box',
+    layout: 'horizontal',
+    spacing: 'sm',
+    paddingAll: '16px',
+    contents: [
+      {
+        type: 'button',
+        action: {
+          type: 'uri',
+          label: 'LINE 聯繫',
+          uri: 'https://line.me/ti/p/@801qstqw'
+        },
+        style: 'primary',
+        color: '#06C755',
+        height: 'sm'
+      },
+      {
+        type: 'button',
+        action: {
+          type: 'uri',
+          label: '官網',
+          uri: 'https://iceberg3.tw'
+        },
+        style: 'primary',
+        color: '#1a1a2e',
+        height: 'sm'
+      }
+    ]
+  }
+};
+  
     async function shareCard() {
       try {
         await liff.init({ liffId: LIFF_ID });
